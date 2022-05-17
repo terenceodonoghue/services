@@ -1,3 +1,3 @@
 # @terenceodonoghue/greenql
 
-🌱 A GraphQL service for clean energy.
+🌱 A GraphQL service for clean energy initiatives.
