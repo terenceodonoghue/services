@@ -477,9 +477,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@terenceodonoghue/greenql@workspace:apps/greenql":
+"@terenceodonoghue/green-graphql@workspace:apps/green-graphql":
   version: 0.0.0-use.local
-  resolution: "@terenceodonoghue/greenql@workspace:apps/greenql"
+  resolution: "@terenceodonoghue/green-graphql@workspace:apps/green-graphql"
   dependencies:
     apollo-server: ^3.7.0
     class-validator: ^0.13.2

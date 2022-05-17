@@ -1,5 +1,5 @@
 {
-  "name": "@terenceodonoghue/greenql",
+  "name": "@terenceodonoghue/green-graphql",
   "scripts": {
     "dev": "nodemon ./src/index.ts"
   },
