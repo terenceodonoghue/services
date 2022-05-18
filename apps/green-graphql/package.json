@@ -5,12 +5,15 @@
   },
   "dependencies": {
     "apollo-server": "^3.7.0",
+    "axios": "^0.27.2",
     "class-validator": "^0.13.2",
+    "dotenv-safe": "^8.2.0",
     "graphql": "^15.8.0",
     "reflect-metadata": "^0.1.13",
     "type-graphql": "^1.1.1"
   },
   "devDependencies": {
+    "@types/dotenv-safe": "^8.1.2",
     "nodemon": "^2.0.16",
     "ts-node": "^10.7.0",
     "typescript": "^4.6.4"
