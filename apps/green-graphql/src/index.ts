@@ -2,7 +2,14 @@ import * as dotenv from 'dotenv-safe';
 import 'reflect-metadata';
 import { ApolloServer } from 'apollo-server';
 import axios from 'axios';
-import { buildSchema, Field, ObjectType, Query, Resolver } from 'type-graphql';
+import {
+  Arg,
+  buildSchema,
+  Field,
+  ObjectType,
+  Query,
+  Resolver,
+} from 'type-graphql';
 
 dotenv.config();
 
@@ -22,6 +29,12 @@ class Energy {
 
   @Field()
   kWh: number;
+
+  @Field({ nullable: true })
+  evRange?: number;
+
+  @Field({ nullable: true })
+  hotWater?: number;
 }
 
 @ObjectType()
@@ -68,7 +81,9 @@ interface Response {
 @Resolver()
 class SolarInverterResolver {
   @Query((returns) => SolarInverter)
-  async solarInverter(): Promise<SolarInverter> {
+  async solarInverter(
+    @Arg('feedInTariff', { defaultValue: 0.0 }) feedInTariff: number,
+  ): Promise<SolarInverter> {
     const {
       data: {
         Body: {
@@ -84,15 +99,27 @@ class SolarInverterResolver {
       },
       day: {
         Wh: DAY_ENERGY.Values[1],
-        kWh: Number.parseFloat((DAY_ENERGY.Values[1] / 1000).toFixed(2)),
+        get kWh() {
+          return Number.parseFloat((this.Wh / 1000).toFixed(2));
+        },
+        evRange: 0,
+        hotWater: 0,
       },
       year: {
         Wh: YEAR_ENERGY.Values[1],
-        kWh: Number.parseFloat((YEAR_ENERGY.Values[1] / 1000).toFixed(2)),
+        get kWh() {
+          return Number.parseFloat((this.Wh / 1000).toFixed(2));
+        },
+        evRange: 0,
+        hotWater: 0,
       },
       total: {
         Wh: TOTAL_ENERGY.Values[1],
-        kWh: Number.parseFloat((TOTAL_ENERGY.Values[1] / 1000).toFixed(2)),
+        get kWh() {
+          return Number.parseFloat((this.Wh / 1000).toFixed(2));
+        },
+        evRange: 0,
+        hotWater: 0,
       },
     };
   }
