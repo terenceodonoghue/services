@@ -2,6 +2,7 @@ import * as dotenv from 'dotenv-safe';
 import 'reflect-metadata';
 import { ApolloServer } from 'apollo-server';
 import axios from 'axios';
+import convert from '@terenceodonoghue/convert';
 import {
   Arg,
   buildSchema,
@@ -100,7 +101,7 @@ class SolarInverterResolver {
       day: {
         Wh: DAY_ENERGY.Values[1],
         get kWh() {
-          return Number.parseFloat((this.Wh / 1000).toFixed(2));
+          return convert(this.Wh, 'Wh').to('kWh', 2);
         },
         evRange: 0,
         hotWater: 0,
@@ -108,7 +109,7 @@ class SolarInverterResolver {
       year: {
         Wh: YEAR_ENERGY.Values[1],
         get kWh() {
-          return Number.parseFloat((this.Wh / 1000).toFixed(2));
+          return convert(this.Wh, 'Wh').to('kWh', 2);
         },
         evRange: 0,
         hotWater: 0,
@@ -116,7 +117,7 @@ class SolarInverterResolver {
       total: {
         Wh: TOTAL_ENERGY.Values[1],
         get kWh() {
-          return Number.parseFloat((this.Wh / 1000).toFixed(2));
+          return convert(this.Wh, 'Wh').to('kWh', 2);
         },
         evRange: 0,
         hotWater: 0,
