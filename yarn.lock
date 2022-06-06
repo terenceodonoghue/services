@@ -477,10 +477,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@terenceodonoghue/convert@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "@terenceodonoghue/convert@npm:1.1.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40terenceodonoghue%2Fconvert%2F1.1.0%2F317f3137dbca4b5c79d76eb6d5c9d71c66c231d738d8f116bb8262a79c2fce7d"
-  checksum: e9c54343d0e5d361a8901dbfc23be53d5ca101128c1c406af622ffb0dcfcf286ae8688b43c8da8c05d7437f6b0b96e13977007c31c8b4fe0ea0bc89c466be741
+"@terenceodonoghue/convert@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "@terenceodonoghue/convert@npm:1.2.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40terenceodonoghue%2Fconvert%2F1.2.0%2F30d2e84483e35339054c47716fad8ffcd5214004c341f9a37aeb087869ae9c6e"
+  checksum: 9c196bd1d2772128186cab297780e166124632cb08faf76e2be7b3374ff9e46a015f290327c46637a8b658874bb426ecf9a19df8e7e3a3edb285bd40fde672cf
   languageName: node
   linkType: hard
 
@@ -488,7 +488,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@terenceodonoghue/green-graphql@workspace:apps/green-graphql"
   dependencies:
-    "@terenceodonoghue/convert": ^1.1.0
+    "@terenceodonoghue/convert": ^1.2.0
     "@types/dotenv-safe": ^8.1.2
     apollo-server: ^3.7.0
     axios: ^0.27.2

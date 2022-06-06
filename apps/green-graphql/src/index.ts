@@ -96,7 +96,9 @@ class SolarInverterResolver {
     return {
       PAC: {
         W: PAC.Values[1],
-        kW: Number.parseFloat((PAC.Values[1] / 1000).toFixed(2)),
+        get kW() {
+          return convert(PAC.Values[1], 'W').to('kW', 2);
+        },
       },
       day: {
         Wh: DAY_ENERGY.Values[1],

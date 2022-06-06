@@ -4,7 +4,7 @@
     "dev": "nodemon ./src/index.ts"
   },
   "dependencies": {
-    "@terenceodonoghue/convert": "^1.1.0",
+    "@terenceodonoghue/convert": "^1.2.0",
     "apollo-server": "^3.7.0",
     "axios": "^0.27.2",
     "class-validator": "^0.13.2",
