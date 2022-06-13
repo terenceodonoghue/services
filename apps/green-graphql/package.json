@@ -1,7 +1,8 @@
 {
   "name": "@terenceodonoghue/green-graphql",
   "scripts": {
-    "dev": "nodemon ./src/index.ts"
+    "dev": "nodemon ./src/index.ts",
+    "lint": "eslint --ext .js,.ts --ignore-path ../../.eslintignore --max-warnings=0 ./"
   },
   "dependencies": {
     "@terenceodonoghue/convert": "^1.2.0",
